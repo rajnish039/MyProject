@@ -66,4 +66,35 @@ public class bookingBean {
 	public void setDistance(String distance) {
 		this.distance = distance;
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((b_purpose == null) ? 0 : b_purpose.hashCode());
+		return result;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		bookingBean other = (bookingBean) obj;
+		if (b_purpose == null) {
+			if (other.b_purpose != null)
+				return false;
+		} else if (!b_purpose.equals(other.b_purpose))
+			return false;
+		return true;
+	}
+	
 }
