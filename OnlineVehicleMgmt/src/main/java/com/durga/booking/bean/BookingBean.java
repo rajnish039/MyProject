@@ -1,6 +1,9 @@
-package Bean;
+package com.durga.booking.bean;
 
-public class bookingBean {
+import com.durga.userReg.bean.UserRegBean;
+import com.durga.vehicle.bean.VehicleBean;
+
+public class BookingBean {
      
 	private int bookingid;
 	private UserRegBean userRegBean;

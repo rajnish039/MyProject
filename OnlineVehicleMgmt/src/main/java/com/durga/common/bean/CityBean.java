@@ -1,4 +1,4 @@
-package Bean;
+package com.durga.common.bean;
 
 /**
  * @author Rajnish

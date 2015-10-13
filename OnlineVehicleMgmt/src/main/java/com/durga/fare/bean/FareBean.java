@@ -1,4 +1,6 @@
-package Bean;
+package com.durga.fare.bean;
+
+import com.durga.vehicle.bean.VehicleBean;
 
 /**
  * @author Rajnish

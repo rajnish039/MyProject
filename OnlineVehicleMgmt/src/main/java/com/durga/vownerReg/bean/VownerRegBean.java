@@ -1,6 +1,10 @@
-package Bean;
+package com.durga.vownerReg.bean;
 
 import java.util.List;
+
+import com.durga.common.bean.CityBean;
+import com.durga.common.bean.CountryBean;
+import com.durga.common.bean.StateBean;
 
 /**
  * @author Rajnish

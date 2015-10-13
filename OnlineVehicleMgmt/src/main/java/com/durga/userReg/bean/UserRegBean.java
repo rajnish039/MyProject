@@ -1,4 +1,8 @@
-package Bean;
+package com.durga.userReg.bean;
+
+import com.durga.common.bean.CityBean;
+import com.durga.common.bean.CountryBean;
+import com.durga.common.bean.StateBean;
 
 /**
  * @author Rajnish
