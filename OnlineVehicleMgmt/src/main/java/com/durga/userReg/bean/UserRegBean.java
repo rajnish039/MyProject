@@ -1,5 +1,12 @@
 package com.durga.userReg.bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.durga.common.bean.CityBean;
 import com.durga.common.bean.CountryBean;
 import com.durga.common.bean.StateBean;
@@ -8,19 +15,45 @@ import com.durga.common.bean.StateBean;
  * @author Rajnish
  * @date 27-09-2015
  */
+@Entity
+@Table(name= "user_reg")
 public class UserRegBean {
 
+	@Id
+	@Column(name = "userid",nullable=false)
 	private int userid;
+	
+	@Column(name= "first_name", nullable=false)
 	private String first_name;
+	
+	@Column(name= "middle_name", nullable=false)
 	private String middle_name;
+	
+	@Column(name= "last_name", nullable=false)
 	private String last_name;
+	
+	@Column(name= "dob", nullable=false)
 	private String dob;
+	
+	@Column(name= "uemail", nullable=false)
 	private String uemail;
+	
+	@Column(name= "umobileno", nullable=false)
 	private String umobileno;
+	
+	@Column(name= "upassword", nullable=false)
 	private String upassword;
+	
+	@Column(name= "uidproof", nullable=false)
 	private String uidproof;
+	
+	@Column(name= "uaddress", nullable=false)
 	private String uaddress;
+	
+	@Column(name= "pincode", nullable=false)
 	private int pincode;
+	
+
 	private CountryBean countryBean;
 	private StateBean stateBean;
 	private CityBean cityBean;

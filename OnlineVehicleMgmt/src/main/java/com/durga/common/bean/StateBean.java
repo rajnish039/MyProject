@@ -2,15 +2,37 @@ package com.durga.common.bean;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
 /**
  * @author Rajnish
  * @date 27-09-2015
  */
+@Entity
+@Table(name="state")
 public class StateBean {
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="sateid", nullable=false)
     private int stateid;
+	
+	@ManyToOne(cascade=CascadeType.ALL, optional=false, targetEntity=CountryBean.class)
+	@JoinColumn(name="countryid" ,referencedColumnName="countryid")
     private CountryBean countryBean;    // M to 1 with country & 
-    private String sname;
+    
+	@Column(name="sname", nullable=false)
+	private String sname;
+	
+	@OneToMany(targetEntity=CityBean.class, mappedBy="stateid", cascade=CascadeType.ALL)
     private List cityList;    // 1 to M with city
     
 	public int getStateid() {
@@ -38,27 +60,4 @@ public class StateBean {
 	public void setCityList(List cityList) {
 		this.cityList = cityList;
 	}
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + stateid;
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		StateBean other = (StateBean) obj;
-		if (stateid != other.stateid)
-			return false;
-		return true;
-	}
-    
-    
 }
