@@ -10,13 +10,15 @@ import javax.persistence.Query;
 import com.durga.booking.bean.BookingBean;
 import com.durga.fare.bean.FareBean;
 import com.durga.userReg.bean.UserRegBean;
+import com.durga.userReg.dao.UserRegDao;
 import com.durga.vehicle.bean.VehicleBean;
 import com.durga.vownerReg.bean.VownerRegBean;
 
-public class UserRegDaoImpl {  
+public class UserRegDaoImpl implements UserRegDao {  
 	
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("PersistenceUnit");
 	
+	@Override
 	public int saveUserReg(UserRegBean userRegBean){
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
@@ -26,6 +28,7 @@ public class UserRegDaoImpl {
 		return 0;
 	}
 	
+	@Override
 	public VehicleBean saveVehicleDetails(VehicleBean vehicleBean)
 	{
 		EntityManager em = emf.createEntityManager();
@@ -37,6 +40,7 @@ public class UserRegDaoImpl {
 		
 	}
 	
+	@Override
 	public List<VehicleBean> getVehicleDetailsByType(String vType)
 	{
 		EntityManager em = emf.createEntityManager();
@@ -45,7 +49,7 @@ public class UserRegDaoImpl {
 		query.setParameter("vType", vType);
 		return query.getResultList();
 	}
-	
+	@Override
 	public List<VehicleBean> getVehicleDetailsByClass(String vClass)
 	{
 		EntityManager em = emf.createEntityManager();
@@ -54,7 +58,7 @@ public class UserRegDaoImpl {
 		query.setParameter("vClass", vClass);
 		return query.getResultList();
 	}
-	
+	@Override
 	public int saveVownerDetails(VownerRegBean vownerRegBean)
 	{
 		EntityManager em = emf.createEntityManager();
@@ -64,7 +68,7 @@ public class UserRegDaoImpl {
 		em.getTransaction().commit();
 		return 0;
 	}
-	
+	@Override
 	public BookingBean saveBookingDetails(BookingBean bookingBean)
 	{
 		EntityManager em = emf.createEntityManager();
@@ -74,7 +78,7 @@ public class UserRegDaoImpl {
 		em.getTransaction();
 		return bookingBean;
 	}
-	
+	@Override
 	public FareBean saveFareDetails(FareBean fareBean)
 	{
 		EntityManager em = emf.createEntityManager();

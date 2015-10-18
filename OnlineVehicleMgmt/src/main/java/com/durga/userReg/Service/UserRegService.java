@@ -1,4 +1,4 @@
-package com.durga.userReg.dao;
+package com.durga.userReg.Service;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import com.durga.userReg.bean.UserRegBean;
 import com.durga.vehicle.bean.VehicleBean;
 import com.durga.vownerReg.bean.VownerRegBean;
 
-public interface UserRegDao {
-	
-	public int saveUserReg(UserRegBean userRegBean);
+public interface UserRegService {
+
+public int saveUserReg(UserRegBean userRegBean);
 	
 	public VehicleBean saveVehicleDetails(VehicleBean vehicleBean);
 	
@@ -23,5 +23,4 @@ public interface UserRegDao {
 	public FareBean saveFareDetails(FareBean fareBean);
 	
 	public int saveVownerDetails(VownerRegBean vownerRegBean);
-
 }
