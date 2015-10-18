@@ -1,12 +1,14 @@
 package com.durga.vehicle.bean;
 
+
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Entity;
 
 import com.durga.fare.bean.FareBean;
 import com.durga.userReg.bean.UserRegBean;

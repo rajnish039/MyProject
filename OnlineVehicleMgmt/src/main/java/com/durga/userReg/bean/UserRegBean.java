@@ -1,11 +1,12 @@
 package com.durga.userReg.bean;
 
+
+
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
+import org.hibernate.annotations.Entity;
+import org.hibernate.annotations.Table;
 
 import com.durga.common.bean.CityBean;
 import com.durga.common.bean.CountryBean;
@@ -16,7 +17,7 @@ import com.durga.common.bean.StateBean;
  * @date 27-09-2015
  */
 @Entity
-@Table(name= "user_reg")
+@Table(appliesTo= "user_reg")
 public class UserRegBean {
 
 	@Id
