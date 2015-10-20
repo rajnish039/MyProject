@@ -7,6 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import org.springframework.stereotype.Repository;
+
 import com.durga.booking.bean.BookingBean;
 import com.durga.fare.bean.FareBean;
 import com.durga.userReg.bean.UserRegBean;
@@ -14,6 +16,7 @@ import com.durga.userReg.dao.UserRegDao;
 import com.durga.vehicle.bean.VehicleBean;
 import com.durga.vownerReg.bean.VownerRegBean;
 
+@Repository("UserRegDao")
 public class UserRegDaoImpl implements UserRegDao {  
 	
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("PersistenceUnit");

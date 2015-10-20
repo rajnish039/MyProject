@@ -24,10 +24,11 @@ public class UserRegController {
 	@Autowired
 	UserRegService userRegService;
 	
-	@RequestMapping(value="/userReg.htm")
+	@RequestMapping(value="/userReg.htm", method=RequestMethod.GET)
 	public String userReg(HttpServletRequest request, HttpServletResponse response,@ModelAttribute("userRegBean") UserRegBean userRegBean,ModelMap model){
 		
 		System.err.println("userRegBean ");
+		
 		return "UserReg";
 	}
 	
