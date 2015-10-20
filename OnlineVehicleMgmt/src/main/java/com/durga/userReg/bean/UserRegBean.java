@@ -2,11 +2,13 @@ package com.durga.userReg.bean;
 
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Entity;
-import org.hibernate.annotations.Table;
 
 import com.durga.common.bean.CityBean;
 import com.durga.common.bean.CountryBean;
@@ -17,8 +19,8 @@ import com.durga.common.bean.StateBean;
  * @date 27-09-2015
  */
 @Entity
-@Table(appliesTo= "user_reg")
-public class UserRegBean {
+@Table(name="user_reg" )
+public class UserRegBean implements Serializable {
 
 	@Id
 	@Column(name = "userid",nullable=false)
